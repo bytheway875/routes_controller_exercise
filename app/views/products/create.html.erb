@@ -1,0 +1,12 @@
+<h2>Create View</h2>
+
+<% product = Product.new(params[:product])%>
+<% product.save %>
+<% if product.save %>
+  <h2>Yay Product!</h2>
+  <%="You saved a #{product.name}, which costs #{product.price}!"%>
+<% else %>
+  <h2> Boo Product!</h2>
+  <%=product.errors.full_messages %><br>
+  That didn't work.
+  <% end %>
